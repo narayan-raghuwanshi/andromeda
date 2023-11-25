@@ -15,6 +15,7 @@ const Contact = () => {
         await emailjs.sendForm(
             'service_48n8zwr',
             'template_racbh3c',
+            //@ts-ignore
             form.current,
             'o3u8-peiEIcsdkHsH')
             .then((result) => {
@@ -27,7 +28,7 @@ const Contact = () => {
     };
 
     useEffect(() => {
-        let timeout:any;
+        let timeout: any;
         if (showSuccessPopup) {
             timeout = setTimeout(() => {
                 setShowSuccessPopup(false);
@@ -64,7 +65,9 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <form className="flex flex-col py-6 gap-3 md:py-0 md:px-6" ref={form}>
+                <form className="flex flex-col py-6 gap-3 md:py-0 md:px-6"
+                    //@ts-ignore
+                    ref={form}>
                     <label className=" text-gray-800 pl-1">Name</label>
                     <input type="text" name="user_name" placeholder="John" className="block w-full text-black rounded-md shadow-sm bg-zinc-100 px-3 py-3" />
                     <label className=" text-gray-800 pl-1">Email</label>
